@@ -1,7 +1,5 @@
 import random
 
-factor = 50000
-
 def Per(n):
     original = n
     t = 0
@@ -9,7 +7,8 @@ def Per(n):
         singlen = [int(d) for d in str(n)]
         resultado = 1
         for number in singlen:
-            resultado *= number
+            if number != 0:
+                resultado *= number
         n = resultado
         t += 1
     return [original,t]
@@ -19,17 +18,17 @@ def Tester(n):
     a = str(2)
     b = str(3)
     c = str(7)
+    d = str(5)
     number = 1
+
     while True:
-        if Per(number)[1] > n:
-            return number, Per(number)[1]
+        if Per(number)[1] >= n:
+            return [number, Per(number)[1]]
         else:
-            number = str((a*random.randint(0,factor))+(b*random.randint(0,factor))+(c*random.randint(0,factor)))
+            number = str((a*random.randint(0,100000))+(b*random.randint(0,100000))+(c*random.randint(0,100000))+(d*random.randint(0,100000)))
             if number == "":
                 number = 0
             else:
                 number = int(number)
 
-
-#print(Tester(3))
-#print(Per(5555555))
+print(Tester(15))
