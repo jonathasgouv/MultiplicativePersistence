@@ -29,7 +29,7 @@ def Tester(n):
                 number = 0
             else:
                 number = int(number)
-            print(number)
 
 
-print(Tester(9))
+#print(Tester(3))
+#print(Per(5555555))
